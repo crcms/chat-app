@@ -6,81 +6,65 @@
           <v-ons-icon icon="ion-navicon, material:md-menu"></v-ons-icon>
         </v-ons-toolbar-button>
       </div>
-      <div class="center">{{ msg }}</div>
+      <div class="center">{{ title }}</div>
     </v-ons-toolbar>
 
     <div class="header">
       <img src="../assets/logo.png">
     </div>
 
-    <v-ons-list-title>Vue.js Essential Links</v-ons-list-title>
-    <v-ons-list>
-      <v-ons-list-item v-for="item in essentialLinks" @click="goTo(item.link)" :key="item.link">
-        <div class="left"><v-ons-icon fixed-width :icon="item.icon"></v-ons-icon></div>
-        <div class="center">{{ item.label }}</div>
-        <div class="right"><v-ons-icon icon="fa-external-link"></v-ons-icon></div>
-      </v-ons-list-item>
-    </v-ons-list>
-
-    <v-ons-list-title>Vue.js Ecosystem</v-ons-list-title>
-    <v-ons-row>
-      <v-ons-col>
-        <v-ons-card @click="goTo('http://router.vuejs.org/')">vue-router</v-ons-card>
-      </v-ons-col>
-      <v-ons-col>
-        <v-ons-card @click="goTo('http://vuex.vuejs.org/')">vuex</v-ons-card>
-      </v-ons-col>
-    </v-ons-row>
-    <v-ons-row>
-      <v-ons-col>
-        <v-ons-card @click="goTo('http://vue-loader.vuejs.org/')">vue-loader</v-ons-card>
-      </v-ons-col>
-      <v-ons-col>
-        <v-ons-card @click="goTo('https://github.com/vuejs/awesome-vue')">awesome-vue</v-ons-card>
-      </v-ons-col>
-    </v-ons-row>
-
+    <v-ons-tabbar position="fixed"
+                  :tabs="tabs"
+                  :visible="true"
+                  :index.sync="activeIndex"
+    ></v-ons-tabbar>
   </v-ons-page>
 </template>
 
 <script>
+import vueMessage from '@/components/Test'
+//import vueGroup from '@/components/Group'
+//import vueContact from '@/components/Contact'
 export default {
   name: 'home',
   data () {
     return {
-      msg: 'Welcome',
-      essentialLinks: [
+      activeIndex: 0,
+      tabs: [
         {
-          label: 'Core Docs',
-          link: 'https://vuejs.org',
-          icon: 'fa-book'
-        },
-        {
-          label: 'Gitter Chat',
-          link: 'https://gitter.im/vuejs/vue',
-          icon: 'fa-commenting'
-        },
-        {
-          label: 'Forum',
-          link: 'https://forum.vuejs.org',
-          icon: 'ion-chatboxes'
-        },
-        {
-          label: 'Twitter',
-          link: 'https://twitter.com/vuejs',
-          icon: 'fa-twitter'
-        },
-        {
-          label: 'Docs for this template',
-          link: 'http://vuejs-templates.github.io/webpack/',
-          icon: 'fa-file-text'
+          icon: this.md() ? null : 'ion-home',
+          label: 'Message',
+          page: vueMessage
+          /*,
+          props: {
+            myProp: 'This is a page prop!'
+          }*/
         }
+
+        /*,
+        {
+          icon: this.md() ? null : 'ion-ios-bell',
+          label: 'Contact',
+          page: vueContact,
+
+          badge: 7
+        },
+        {
+          icon: this.md() ? null : 'ion-ios-settings',
+          label: 'Group',
+          page: vueGroup,
+        }*/
       ]
     }
   },
   methods: {
-    goTo (url) {
-      window.open(url, '_blank')
+    md() {
+      return this.$ons.platform.isAndroid();
+    }
+  },
+  computed: {
+    title() {
+      return this.tabs[this.activeIndex].label;
     }
   }
 }
