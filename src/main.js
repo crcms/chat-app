@@ -2,16 +2,10 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import 'onsenui/css/onsenui.css'
 import 'onsenui/css/onsen-css-components.css'
-
 import Vue from 'vue'
 import VueOnsen from 'vue-onsenui'
 import store from './store'
 import App from './App'
-
-import Icon from 'vue-awesome/components/Icon'
-
-// globally (in your main .js file)
-Vue.component('icon', Icon)
 
 Vue.config.productionTip = false
 
