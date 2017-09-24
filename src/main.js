@@ -8,6 +8,11 @@ import VueOnsen from 'vue-onsenui'
 import store from './store'
 import App from './App'
 
+import Icon from 'vue-awesome/components/Icon'
+
+// globally (in your main .js file)
+Vue.component('icon', Icon)
+
 Vue.config.productionTip = false
 
 Vue.use(VueOnsen)
