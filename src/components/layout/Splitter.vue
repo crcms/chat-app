@@ -3,7 +3,7 @@
     <div class="splitter">
       <v-ons-splitter>
         <v-ons-splitter-side
-          swipeable width="150px" collapse="" side="left"
+          swipeable width="70%" collapse="" side="left"
           :open.sync="status"
         >
           <side-component></side-component>

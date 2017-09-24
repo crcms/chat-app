@@ -16,12 +16,15 @@
 
 
     </v-ons-toolbar>
-    <v-ons-tabbar swipeable position="bottom"
-                  :tabs="tabs"
-                  :visible="true"
-                  :index.sync="activeIndex"
-    >
-    </v-ons-tabbar>
+
+    <div>
+      <v-ons-tabbar swipeable position="bottom"
+                    :tabs="tabs"
+                    :visible="true"
+                    :index.sync="activeIndex"
+      >
+      </v-ons-tabbar>
+    </div>
   </v-ons-page>
 </template>
 
@@ -74,5 +77,7 @@
 
 
 <style scoped>
-
+  .toolbar {
+    background: blue;
+  }
 </style>

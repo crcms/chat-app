@@ -1,9 +1,15 @@
 <template>
   <v-ons-page>
     <div class="splitter-side">
+      <header style="height: 150px;background: #EEEEEE">
+        很高的头部
+      </header>
       <v-ons-list>
         <v-ons-list-item>
-          <div class="center" @click="push">舟桥1</div>
+          <div class="left">
+            <v-ons-icon icon="fa-cogs"></v-ons-icon>
+          </div>
+          <div class="center" @click="push">个人设置</div>
         </v-ons-list-item>
       </v-ons-list>
     </div>

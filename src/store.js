@@ -30,7 +30,7 @@ export default new Vuex.Store({
     splitter: {
       namespaced: true,
       state: {
-        status: true
+        status: false
       },
       mutations: {
         toggle (state, openStatus) {
