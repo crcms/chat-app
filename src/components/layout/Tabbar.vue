@@ -82,7 +82,13 @@
 
     .toolbar__title {
       color: #FFFFFF;
-      font-weight: 500;
+      font-weight: bold;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .ons-icon {
+      color: #FFFFFF;
     }
   }
 </style>

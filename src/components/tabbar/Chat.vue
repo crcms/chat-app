@@ -11,12 +11,12 @@
           <span v-show="state === 'action'"> Loading... </span>
         </v-ons-pull-hook>
         <v-ons-list>
-          <v-ons-list-item >
-            {{state}}
-          </v-ons-list-item>
+          <!--<v-ons-list-item>-->
+            <!--{{state}}-->
+          <!--</v-ons-list-item>-->
           <v-ons-list-item modifier="longdivider">
             <div class="left">
-              <img class="list-item__thumbnail" src="http://placekitten.com/g/70/70" style="border-radius: 50%">
+              <img class="list-item__thumbnail" src="http://placekitten.com/g/80/80" style="border-radius: 50%">
             </div>
             <div class="center">
               <span class="list-item__title">普通昵称</span>
@@ -27,9 +27,35 @@
               <div class="chat-notify-num" >10</div>
             </div>
           </v-ons-list-item>
-          <v-ons-list-item v-for="item in items" :key="item">
-            {{item}}
+          <v-ons-list-item modifier="longdivider">
+            <div class="left">
+              <img class="list-item__thumbnail" src="http://placekitten.com/g/80/80" style="border-radius: 50%">
+            </div>
+            <div class="center">
+              <span class="list-item__title">普通昵称</span>
+              <span class="list-item__subtitle">明天有空吗?</span>
+            </div>
+            <div class="right">
+              <div class="chat-time">2017-09-02</div>
+              <div class="chat-notify-num" >10</div>
+            </div>
           </v-ons-list-item>
+          <v-ons-list-item modifier="longdivider">
+            <div class="left">
+              <img class="list-item__thumbnail" src="http://placekitten.com/g/80/80" style="border-radius: 50%">
+            </div>
+            <div class="center">
+              <span class="list-item__title">普通昵称</span>
+              <span class="list-item__subtitle">明天有空吗?</span>
+            </div>
+            <div class="right">
+              <div class="chat-time">2017-09-02</div>
+              <div class="chat-notify-num" >10</div>
+            </div>
+          </v-ons-list-item>
+          <!--<v-ons-list-item v-for="item in items" :key="item">-->
+            <!--{{item}}-->
+          <!--</v-ons-list-item>-->
         </v-ons-list>
 
       </div>
@@ -42,7 +68,7 @@
         name: 'chat',
         data () {
             return {
-              state: 'initial',
+              state: '',//initial
               items: [1,2,3,4,5],
             }
         },
@@ -62,16 +88,17 @@
 
 
 <style scoped lang="scss">
-
 .content {
+  background: #EEEEEE;
+  height: 100vh;
   .list-item {
-    background: #EEEEEE;
-    border-bottom:1px solid #8E8E8E;
+    background-color: #EEEEEE;
+    border-bottom:2px solid #D8D8D8;
     .list-item__title {
       color: #4B4B4B;
     }
     .list-item__subtitle {
-      color: #9A9A9A;
+      color: #9D9D9D;
     }
   }
 
