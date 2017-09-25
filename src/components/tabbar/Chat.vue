@@ -6,7 +6,6 @@
           :action="loadItem"
           @changestate="state = $event.state"
         >
-
           <span v-show="state === 'initial'"> Pull to refresh </span>
           <span v-show="state === 'preaction'"> Release </span>
           <span v-show="state === 'action'"> Loading... </span>
@@ -64,22 +63,36 @@
 
 <style scoped lang="scss">
 
+.content {
+  .list-item {
+    background: #EEEEEE;
+    border-bottom:1px solid #8E8E8E;
+    .list-item__title {
+      color: #4B4B4B;
+    }
+    .list-item__subtitle {
+      color: #9A9A9A;
+    }
+  }
 
-
-.list-item--longdivider__right {
-  display:flex;
-  flex-wrap:wrap;
-  flex-direction:column;
+  .list-item--longdivider__right {
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
     .chat-time {
-      font-size: 0.8em;
+      font-size: 0.6em;
+      color:#8E8E8E;
     }
     .chat-notify-num {
       color: #FFFFFF;
       background: red;
-      font-size: 0.5em;
-      padding:0px  5px;
-      border-radius: 50% 50% 50% 50%;
+      font-size: 0.4em;
+      padding:0px  3px;
+      border-radius: 50% 50%;
     }
+  }
 }
+
+
 
 </style>

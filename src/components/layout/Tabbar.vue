@@ -76,8 +76,13 @@
 </script>
 
 
-<style scoped>
+<style scoped lang="scss">
   .toolbar {
-    background: blue;
+    background: #01A1FF;
+
+    .toolbar__title {
+      color: #FFFFFF;
+      font-weight: 500;
+    }
   }
 </style>

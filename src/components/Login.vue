@@ -1,65 +1,37 @@
-<style scoped lang="scss">
-  .button--large {
-    margin-top: 30px;
-    cursor: pointer;
-  }
-  /*.text-input {
-    display: block;
-    width: 100%;
-  }*/
-/*.login {
-
-  background: #FFFFFF;
-
-  .container {
-    padding-left:5%;
-    padding-right:5%;
-
-    header {
-      margin-bottom:70px;
-    }
-
-    .content {
-
-
-    }
-  }
-
-}*/
-</style>
 <template>
   <v-ons-page>
     <div class="login">
       <div class="container">
         <header>
-          登录系统
+          <img src="../assets/login-banner.jpg" alt="" style="max-width: 100%;margin:0px auto;">
         </header>
         <div class="content">
           <v-ons-list modifier="noborder">
             <v-ons-list-item modifier="longdivider">
               <div class="left">
-                <v-ons-icon icon="fa-user-circle-o"></v-ons-icon>
+                <v-ons-icon icon="fa-user-circle-o" size="23px"></v-ons-icon>
               </div>
               <div class="center">
-                <v-ons-input placeholder="请输入用户名" v-model="data.name"></v-ons-input>
+                <v-ons-input class="input-text" placeholder="" v-model="data.name"></v-ons-input>
               </div>
             </v-ons-list-item>
             <v-ons-list-item modifier="longdivider">
               <div class="left">
-                <v-ons-icon icon="fa-lock"></v-ons-icon>
+                <v-ons-icon icon="fa-lock" size="30px"></v-ons-icon>
               </div>
               <div class="center">
-                <v-ons-input placeholder="请输入密码"  v-model="data.password"></v-ons-input>
+                <v-ons-input type="password" class="input-text" placeholder="" v-model="data.password"></v-ons-input>
               </div>
             </v-ons-list-item>
             <v-ons-list-item modifier="nodivider">
               <div class="center">
-                  <v-ons-button modifier="large" @click="login()">登&nbsp;&nbsp;&nbsp;录</v-ons-button>
+                <v-ons-button modifier="large" @click="login()">登&nbsp;&nbsp;&nbsp;录</v-ons-button>
               </div>
             </v-ons-list-item>
-            <v-ons-list-item  modifier="nodivider">
+            <v-ons-list-item modifier="nodivider">
               <div class="left">
-                <v-ons-checkbox :value="1" v-model="data.save"></v-ons-checkbox>记住密码
+                <v-ons-checkbox :value="1" v-model="data.save"></v-ons-checkbox>
+                <span style="margin-left: 5px">记住密码</span>
               </div>
               <div class="right">
                 <span>忘记密码</span>
@@ -78,25 +50,25 @@
     name: 'login',
     data () {
       return {
-          data: {
-              name:'',
-              password:'',
-              save:true
-          }
+        data: {
+          name: '',
+          password: '',
+          save: true
+        }
       }
     },
     methods: {
       login() {
-        this.$store.commit('navigation/push',SplitterComponent);
+        this.$store.commit('navigation/push', SplitterComponent);
         /*this.$emit('push-page', {
-          extends: SplitterComponent,
-          data() {
-            return {
-                id: 123,
-                myCustomDataHere: 42
-            }
-          }
-        })*/
+         extends: SplitterComponent,
+         data() {
+         return {
+         id: 123,
+         myCustomDataHere: 42
+         }
+         }
+         })*/
       }
     }
   }
@@ -104,3 +76,58 @@
 
 
 
+<style scoped lang="scss">
+  .login {
+    background-color: #01A4FF;
+    height: 100vh;
+
+    header {
+      margin-bottom:30px;
+    }
+
+    .list {
+      background: none;
+
+      .list-item {
+        border-bottom: 1px solid #14C1F8;
+
+        .list-item__left {
+          .ons-icon {
+            color: #FFFFFF;
+          }
+        }
+
+        .list-item__center {
+          .input-text {
+            .text-input {
+              color: #FFFFFF!important;
+              font-weight: 600;
+              font-size: 14px;
+            }
+
+          }
+        }
+
+        .button--large {
+          margin-top: 30px;
+          cursor: pointer;
+          background-color: #D8EEFB;
+          color: #2EA1F5;
+        }
+      }
+      .list-item:nth-child(3) {
+        border:0px;
+      }
+
+      .list-item:last-child {
+        .list-item__left,.list-item__right {
+          color: #CAF0F7;
+        }
+      }
+    }
+    /**/
+
+  }
+
+
+</style>
